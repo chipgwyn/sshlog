@@ -108,7 +108,15 @@ def printhelp():
 	sys.exit(1)
 
 
+def transformhost(hostname):
+	newhost = str()
 
+	if 'nms.' in hostname:
+		newhost = hostname.replace('nms.', 'nmsspare.')
+
+	return newhost
+
+	
 #######################################
 # MAIN!!
 #######################################
@@ -119,6 +127,8 @@ def main():
 		printhelp()
 	else:
 		remote_host = sys.argv[1] or printhelp()
+
+	remote_host = transformhost(remote_host)
 
 	current_log_dir = os.path.join(LOGGING_DIR, datePath())
 	if not os.path.isdir(current_log_dir):
