@@ -109,6 +109,14 @@ def printhelp():
 
 
 def transformhost(hostname):
+  """
+  Function: transformhost():
+  Descr:  returns a new hostname after performing some transformation on it.  This is
+      normally used to create a 'shortcut' for hostnames that are rather long.
+      Say, use 'nms.site' as a shortcut for 'mysuperlongnmshost.site'
+  Args: hostname: this is the hostname received as an argument on the command line
+  Returns:  newhost, a string containing the transformed hostname
+  """
 	newhost = str()
 
 	if 'nms.' in hostname:
