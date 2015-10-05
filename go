@@ -117,13 +117,13 @@ def transformhost(hostname):
   	Args: hostname: this is the hostname received as an argument on the command line
   	Returns:  newhost, a string containing the transformed hostname
   	"""
-	newhost = str()
-
+	
 	if 'nms.' in hostname:
-		newhost = hostname.replace('nms.', 'nmsspare.')
+		hostname = hostname.replace('nms.', 'nmsspare.')
 
-	return newhost
+	return hostname
 
+	
 	
 #######################################
 # MAIN!!
